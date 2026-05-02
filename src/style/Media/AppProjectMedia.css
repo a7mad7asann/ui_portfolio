@@ -1,0 +1,44 @@
+
+@media (max-width:460px){
+  .projecti{
+    margin-top: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .projecti h1{
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
+
+  .projecti .img-card {
+    padding-top: 60px;
+  }
+
+  .projecti .img-card .banner{
+    margin-bottom: 25px;
+  }
+
+  .projecti .img-card .banner .overlay {
+    top: 7%;
+    left: 8%;
+    width: 84%;
+    height: 79%;
+  }
+
+  .projecti .img-card .banner .overlay h2{
+    font-size: 20px;
+  }
+
+  .projecti .img-card .banner .overlay p{
+    font-size: 13px;
+  }
+  
+  .projecti .img-card .banner .overlay  img{
+    width: 40px;
+    height: 40px;
+  }
+}

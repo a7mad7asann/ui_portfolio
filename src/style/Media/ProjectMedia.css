@@ -1,0 +1,43 @@
+@media (max-width:460px){
+  .project{
+    margin-top: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .project h1{
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
+
+  .project .img-card {
+    padding-top: 60px;
+  }
+
+  .project .img-card .banner{
+    margin-bottom: 25px;
+  }
+
+  .project .img-card .banner .overlay {
+    top: 5%;
+    left: 8%;
+    width: 84%;
+    height: 78%;
+  }
+
+  .project .img-card .banner .overlay h2{
+    font-size: 18px;
+  }
+
+  .project .img-card .banner .overlay p{
+    font-size: 11px;
+  }
+  
+  .project .img-card .banner .overlay  img{
+    width: 30px;
+    height: 30px;
+  }
+}

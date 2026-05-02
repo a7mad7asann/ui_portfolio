@@ -1,0 +1,111 @@
+.projecte{
+  padding-top: 90px;
+  overflow: hidden;
+}
+
+.projecte h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-weight: 900;
+  margin: 0;
+  padding-bottom: 23px;
+  color: var(--color-white);
+}
+
+.projecte h1 span{
+  color: var(--primary-color);
+  margin-left: 5px;
+}
+
+.projecte .img-card {
+  padding-top: 50px;
+  position: relative;
+}
+
+.projecte .img-card img {
+  background-color: transparent;
+  border-radius: 25px;
+  width: 90%;
+  height: 90%;
+  z-index: 1;
+  margin-bottom: 70px;
+}
+
+.projecte .img-card .banner{
+  position: relative;
+  top: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.projecte .img-card .banner .overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 27%;
+  left: 7%;
+  width: 86%;
+  height: 60%;
+  border-radius: 25px;
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 900;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 41px var(--primary-color);
+  text-decoration: none;
+
+}
+
+.projecte .img-card .banner .overlay h2{
+  background-color: transparent;
+  text-transform: capitalize;
+  font-size: 32px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.projecte .img-card .banner .overlay p{
+  background-color: transparent;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 50px;
+  margin-bottom: 5px;
+  text-indent: 8px;
+  text-decoration: none;
+
+}
+
+.projecte .img-card .banner .overlay .link{
+  background-color: transparent;
+  text-decoration: none;
+
+}
+
+.projecte .img-card .banner .overlay  img{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0;
+  transition: all 0.2s;
+}
+
+.projecte .img-card .banner .overlay  img:hover{
+ filter: var(--filter-primary);
+}
+
+/* hover overlay */
+.projecte .img-card .banner:hover .overlay{
+  opacity: 0.6;
+}
+
