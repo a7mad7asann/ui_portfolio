@@ -1,24 +1,7 @@
-import React, { useEffect , useState } from 'react';
-
-//style 
-import '../style/App.css';
-import '../style/Contact.css';
-import '../style/Media/ContactMedia.css'
-
-
-// Import AOS for animations
-import 'aos/dist/aos.css';
-import AOS from 'aos';
+import React, { useEffect, useState } from 'react';
+import { DataContext } from '../context/DataContext';
 
 const Contact = () => {
-  // Initialize AOS when the component mounts
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-    });
-  }, []);
-
-  // State for form data
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -27,7 +10,6 @@ const Contact = () => {
     message: '',
   });
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -36,7 +18,6 @@ const Contact = () => {
     }));
   };
 
-  // Send WhatsApp message
   const sendWhatsapp = (e) => {
     e.preventDefault();
     const phonenumber = "+201029698780";
@@ -53,100 +34,88 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <section id='contact'>
-        <div className="container">
-          <div className="contain">
-            <h1>
-              FeedBack
-              <span>
-                me?
-              </span>
-            </h1>
-
-            <form onSubmit={sendWhatsapp}>
-              <div className="conten row">
-                <div className="con col-lg-6 col-sm-12">
-                  <div className="inbut-f" data-aos="fade-right">
-                    <input 
-                      type="text" 
-                      className='f-name' 
-                      placeholder='First Name' 
-                      name="firstName" 
-                      value={formData.firstName} 
-                      onChange={handleChange} 
-                      required 
-                    />
-                  </div>
-                </div>
-
-                <div className="con col-lg-6 col-sm-12">
-                  <div className="inbut-f" data-aos="fade-left">
-                    <input 
-                      type="text"  
-                      className='l-name' 
-                      placeholder='Last Name' 
-                      name="lastName" 
-                      value={formData.lastName} 
-                      onChange={handleChange} 
-                      required 
-                    />
-                  </div>
-                </div>
-
-                <div className="con  col-lg-6 col-sm-12">
-                  <div className="inbut-f" data-aos="fade-up-right">
-                    <input 
-                      type="tel" 
-                      className='phone' 
-                      placeholder='Number' 
-                      name="phone" 
-                      value={formData.phone} 
-                      onChange={handleChange} 
-                      required 
-                    />
-                  </div>
-                </div>
-
-                <div className="con  col-lg-6 col-sm-12">
-                  <div className="inbut-f" data-aos="fade-up-left">
-                    <input 
-                      type="email" 
-                      className='email' 
-                      placeholder='Email' 
-                      name="email" 
-                      value={formData.email} 
-                      onChange={handleChange} 
-                      required 
-                    />
-                  </div>
-                </div>
-              </div>
-
-            <div className="con col-lg-12 col-sm-12">
-              <textarea 
-              
-                id="message" 
-                placeholder='Message' 
-                name="message" 
-                rows="6" 
-                cols="80" 
-                value={formData.message} 
-                onChange={handleChange} 
-                required 
-                data-aos="fade-up">
-              </textarea>
-            </div>
-
-              <button  type='submit' className='send-bt' data-aos="fade-up" onClick={sendWhatsapp}>
-                Send
-              </button>
-            </form>
-          </div>
+    <section className="py-24 bg-[#1a1d21] text-white" id="contact">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="text-center mb-16 relative">
+          <h2 className="text-3xl font-bold relative z-10">
+            Contact <span className="text-[#007bff]">Me?</span>
+          </h2>
         </div>
-      </section>
-    </>
+
+        <form onSubmit={sendWhatsapp} className="mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div data-aos="fade-right">
+              <input 
+                type="text" 
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                placeholder="First Name" 
+                className="w-full bg-[#1e2227] border border-transparent focus:border-[#007bff] rounded-lg px-6 py-4 outline-none transition-all duration-300 text-white placeholder-gray-400 font-bold"
+                required
+              />
+            </div>
+            <div data-aos="fade-left">
+              <input 
+                type="text" 
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                placeholder="First Name" 
+                className="w-full bg-[#1e2227] border border-transparent focus:border-[#007bff] rounded-lg px-6 py-4 outline-none transition-all duration-300 text-white placeholder-gray-400 font-bold"
+                required
+              />
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+              <input 
+                type="text" 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="First Name" 
+                className="w-full bg-[#1e2227] border border-transparent focus:border-[#007bff] rounded-lg px-6 py-4 outline-none transition-all duration-300 text-white placeholder-gray-400 font-bold"
+                required
+              />
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <input 
+                type="text" 
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="First Name" 
+                className="w-full bg-[#1e2227] border border-transparent focus:border-[#007bff] rounded-lg px-6 py-4 outline-none transition-all duration-300 text-white placeholder-gray-400 font-bold"
+                required
+              />
+            </div>
+          </div>
+          
+          <div className="mb-10" data-aos="fade-up" data-aos-delay="300">
+            <textarea 
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="First Name" 
+              rows="6"
+              className="w-full bg-[#1e2227] border border-transparent focus:border-[#007bff] rounded-lg px-6 py-4 outline-none transition-all duration-300 text-white placeholder-gray-400 font-bold resize-none"
+              required
+            ></textarea>
+          </div>
+
+          <div className="flex justify-center" data-aos="zoom-in">
+            <button 
+              type="submit" 
+              className="bg-[#007bff] hover:bg-blue-600 text-white font-bold py-3 px-16 rounded-lg transition-all duration-300 shadow-[0_0_30px_rgba(0,123,255,0.6)]"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </section>
   );
-}
+};
 
 export default Contact;

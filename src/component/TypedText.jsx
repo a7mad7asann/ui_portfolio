@@ -1,19 +1,30 @@
 import React, { useEffect, useRef } from 'react';
-import Typed from 'typed.js';
 
 const TypedText = () => {
   const textRef = useRef(null);
 
   useEffect(() => {
-    const typed = new Typed(textRef.current, {
-      strings: ["Hossam Mohamed", "UI/UX Designer"],
-      typeSpeed: 70,
-      backSpeed: 60,
-      loop: true
-    });
+    let typedInstance;
+    
+    const initTyped = async () => {
+      const Typed = (await import('typed.js')).default;
+      if (textRef.current) {
+        typedInstance = new Typed(textRef.current, {
+          strings: ["Hossam Mohamed", "UI/UX Designer"],
+          typeSpeed: 70,
+          backSpeed: 60,
+          loop: true
+        });
+      }
+    };
+
+    const timer = setTimeout(() => {
+      initTyped();
+    }, 1000); // Defer even more to ensure main thread is free
 
     return () => {
-      typed.destroy(); // cleanup on unmount
+      clearTimeout(timer);
+      if (typedInstance) typedInstance.destroy();
     };
   }, []);
 

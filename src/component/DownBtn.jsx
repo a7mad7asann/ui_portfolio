@@ -1,8 +1,5 @@
 import React from 'react';
 
-//style
-import '../style/DownBtn.css';
-
 import file_pdf_1 from '../pdf/Hossam Eldeen mohamed cv UI&UX DESIGNER.pdf';
 
 // Assuming the file is placed in the public directory
@@ -20,7 +17,7 @@ const DownBtn = () => {
 }
 
   return (
-    <button className='down' onClick={() => { downloedFileAtUrl(PNG_FILE_URL) }}>
+    <button className="mt-8 bg-[#007bff] hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(0,123,255,0.5)]" onClick={() => { downloedFileAtUrl(PNG_FILE_URL) }}>
       Download CV
     </button>
   );
